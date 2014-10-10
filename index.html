@@ -6,16 +6,24 @@
 	<script src="main.js"></script>
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
-<body ng-app="myTicTacToe" ng-controller="myController">
+<body ng-app="myTicTacToe" >
 	<h1> Tic Tac Toe </h1>
-		<div class="wrapper"  ng-repeat="onerow in rows">{{onerow}}>
-			<div class="column"></div>
-			<div class="column"></div>
-			<div class="column"></div>
+		<div class="wrapper" ng-controller="TTTController">  
+				<div class="cell" ng-click= "cellTest('something')">c01</div>
+				<div class="cell" ng-click= "cellTest('something')">c02</div>
+				<div class="cell" ng-click= "cellTest('something')">c03</div>
 
+				<div class="cell" ng-click= "cellTest('something')">c04</div>
+				<div class="cell" ng-click= "cellTest('something')">c05</div>
+				<div class="cell" ng-click= "cellTest('something')">c06</div>
 
+				<div class="cell" ng-click= "cellTest('something')">c07</div>
+				<div class="cell" ng-click= "cellTest('something')">c08</div>
+				<div class="cell" ng-click= "cellTest('something')">c09</div>
 
 		</div>
+
+		<button>Test Button</button>
 </body>
 
 
@@ -23,3 +31,5 @@
 
 </script>
 </html>
+
+

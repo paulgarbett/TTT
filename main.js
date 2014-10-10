@@ -1,8 +1,16 @@
 	var myTicTacToe = angular.module ('myTicTacToe',[])
 
-	//creating rows in tic tac toe//
+	myTicTacToe.controller('TTTController', function ($scope) {
 
-	myTicTacToe.controller('myController', function($scope){
-		$scope.rows = ["rowOne"];
+		$scope.cellList
+
+	//creating some sort of action when clicked 
+
+	$scope.cellTest = function() {
+		console.log('something is happening.');
+		
+	};
+
+
 	
 	});
