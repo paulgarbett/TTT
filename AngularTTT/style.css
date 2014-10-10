@@ -1,0 +1,17 @@
+body {
+	background-color: lightblue;
+}
+
+.container {
+	background-color: yellow;
+	width: 500px;
+	height: 500px;
+}
+
+.cells {
+	width:164.5px;
+	height: 164.5px;
+	border: 1px solid black;
+	display: inline-block;
+	float: left;
+}
