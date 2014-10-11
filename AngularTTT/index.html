@@ -7,17 +7,15 @@
 	 <script src="main.js"></script>
 
 </head>
-<body>
+<body  ng-controller="MyTicTacToeApp">
 	<h1>Tic Tac Toe - Angular</h1>
-	<div class="container" ng-controller="MyTicTacToeApp">
-
-		<div class="cells" ng-repeat="c in cells"></div>
-
-
-
-
+	<div class="container" >
+		<div class="cells" ng-repeat="c in cells" ng-click="color">
+			
+		</div>
 	</div>
-	
+	<h2> You Win/Lose</h2>
+	<button ng-click="test()">Reset</button>
 
 </body>
 </html>

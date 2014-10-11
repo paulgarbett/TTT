@@ -2,7 +2,14 @@ var myTicTacToeApp = angular.module('myTicTacToeApp', []);
 
 myTicTacToeApp.controller('MyTicTacToeApp', function ($scope) {
 
-	
+ 	//test button
+
+	$scope.test = function() {
+		console.log('This is working.');
+	};
+
+
+	//creating the cells
 
 	$scope.cells = [
 	{status: "c01"},

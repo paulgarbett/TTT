@@ -1,17 +1,28 @@
 body {
 	background-color: lightblue;
+	text-align: center;
 }
 
 .container {
-	background-color: yellow;
 	width: 500px;
 	height: 500px;
+	margin: auto;
 }
 
 .cells {
 	width:164.5px;
 	height: 164.5px;
-	border: 1px solid black;
+	border: 1px solid grey;
 	display: inline-block;
 	float: left;
+	color: black;
+	background-color: yellow;
+}
+
+h1,h2 {
+	color: brown;
+}
+
+.color {
+	background-color: red;
 }
