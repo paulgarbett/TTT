@@ -19,10 +19,17 @@ body {
 	background-color: yellow;
 }
 
+
 h1,h2 {
 	color: brown;
+	text-align: center;
 }
 
-.color {
+
+.red {
 	background-color: red;
+}
+
+.blue {
+	background-color: blue;
 }

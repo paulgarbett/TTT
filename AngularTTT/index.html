@@ -10,12 +10,15 @@
 <body  ng-controller="MyTicTacToeApp">
 	<h1>Tic Tac Toe - Angular</h1>
 	<div class="container" >
-		<div class="cells" ng-repeat="c in cells" ng-click="color">
-			
+		<p>Move Counter: {{moveCounter}}</p>
+		<div ng-repeat="c in cellList" >
+			<div class="cells" ng-class="{red:c.move=='X', blue:c.move=='O'}" ng-click ="playerPicks(c)">
+			Cell Contents: {{c.move}}
+			</div>
+
 		</div>
 	</div>
 	<h2> You Win/Lose</h2>
 	<button ng-click="test()">Reset</button>
-
 </body>
 </html>
