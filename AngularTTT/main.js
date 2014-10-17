@@ -1,53 +1,83 @@
-var myTicTacToeApp = angular.module('myTicTacToeApp', []);
+var myTicTacToeApp = angular.module('myTicTacToeApp', ["firebase"]);
 
-myTicTacToeApp.controller('MyTicTacToeApp', function ($scope) {
+myTicTacToeApp.controller('MyTicTacToeApp', function ($scope,$firebase) {
 
- 	$scope.testString = "Is this hooked up correctly????";
- 	//test button
+$scope.remoteGameContainer = 
+  $firebase(new Firebase("https://tttpaulgarb.firebaseIO.com/databaseGameContainer")) ;
 
-	$scope.test = function() {
-		console.log('This is working.');
-	};
-
-	//change cell color
-
-	$scope.change = function() {
-
-	};
 
 	//creating the cells
 
 	$scope.cellList = [
-	{status: "c01", move:""},
-	{status: "c02", move:""},
-	{status: "c03", move:""},
-	{status: "c04", move:""},
-	{status: "c05", move:""},
-	{status: "c06", move:""},
-	{status: "c07", move:""},
-	{status: "c08", move:""},
-	{status: "c09", move:""}
+	{status: "c01", move:"1"},
+	{status: "c02", move:"2"},
+	{status: "c03", move:"3"},
+	{status: "c04", move:"4"},
+	{status: "c05", move:"5"},
+	{status: "c06", move:"6"},
+	{status: "c07", move:"7"},
+	{status: "c08", move:"8"},
+	{status: "c09", move:"9"}
 	] ;
 
 	$scope.movecounter = 0 ;
 
-	$scope.select = function() {
-		console.log('Change Color.') ;
+	// receives players position
+	$scope.playerMovesX = [];
+	$scope.playerMovesO = [];
+
+
+	// Firebase hookup here
+	$scope.gameContainer = {
+		cellListArray: $scope.cellList,
+		moveCount: $scope.movecounter
 	};
 
+
+	// Angular stuff here
+	$scope.remoteGameContainer.$bind($scope, "gameContainer") ;
+
+	$scope.$watch('gameContainer' , function() {
+		console.log('gameContainer changed!') ;
+	});
+
+	
+	// Determines which player's move it is
 	$scope.playerPicks = function(thisCell) {
-		$scope.movecounter = $scope.movecounter + 1 ;
-		console.log('Change Color.') ;
-		if (($scope.movecounter % 2) == 1) {
+		$scope.gameContainer.moveCount = $scope.gameContainer.moveCount + 1 ;
+		if (($scope.gameContainer.moveCount % 2) == 1) {
 			thisCell.move = "X" ;
-			
+			$scope.playerMovesX.push(thisCell.status);
 		}
 		else {
-			thisCell.move = "O";
-			
+			thisCell.move = "O";	
+			$scope.playerMovesO.push(thisCell.status);
 		}
 		console.log("Cells is now: " + thisCell.move) ;
+		console.log($scope.playerMovesX);
 
+
+
+
+	};
+
+	// The following are the winning combinations
+	[ 1, 2, 3 ];
+	[ 4, 5, 6 ];
+	[ 7, 8, 9 ];
+	[ 1, 4, 7 ];
+	[ 2, 5, 8 ];
+	[ 3, 6, 9 ];
+	[ 1, 5, 9 ];
+	[ 3, 5, 7 ]
+
+	
+
+
+ 	//test button
+
+	$scope.test = function() {
+		console.log('This is working.');
 	};
 
 

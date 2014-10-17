@@ -2,23 +2,31 @@
 <html ng-app="myTicTacToeApp">
 <head>
 	<title>Angular Tic Tac Toe</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
-	 <script src="main.js"></script>
+	<!-- Normalize CSS -->
+    <link rel="stylesheet" src="https://normalize-css.googlecode.com/svn/trunk/normalize.min.css">
+    <!-- App CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.19/angular.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
+    <!-- App javascript -->
+    <script src="main.js"></script>
 
 </head>
-<body  ng-controller="MyTicTacToeApp">
-	<h1>Tic Tac Toe - Angular</h1>
+<body  ng-controller="MyTicTacToeApp" ng-model="gameContainer">
+	<h1>Tic Tac Toe</h1>
 	<div class="container" >
-		<p>Move Counter: {{moveCounter}}</p>
-		<div ng-repeat="c in cellList" >
+		<p>Move Counter: {{gameContainer.moveCount}}</p>
+		<div ng-repeat="c in gameContainer.cellListArray" >
 			<div class="cells" ng-class="{red:c.move=='X', blue:c.move=='O'}" ng-click ="playerPicks(c)">
 			Cell Contents: {{c.move}}
 			</div>
 
 		</div>
 	</div>
-	<h2> You Win/Lose</h2>
-	<button ng-click="test()">Reset</button>
+	<button ng-click="test()">Reset Game</button>
 </body>
 </html>

@@ -1,6 +1,8 @@
 body {
 	background-color: lightblue;
 	text-align: center;
+	font-family: helvetica;
+	font-weight: 300;
 }
 
 .container {
@@ -10,18 +12,21 @@ body {
 }
 
 .cells {
-	width:164.5px;
-	height: 164.5px;
-	border: 1px solid grey;
+	width:160.5px;
+	height: 160.5px;
+	border: 2px solid white;
 	display: inline-block;
 	float: left;
 	color: black;
-	background-color: yellow;
+	background-color: lightgrey;
+	
 }
 
 
 h1,h2 {
-	color: brown;
+	color: white;
+	font-weight: lighter;
+	font-size: 48px;
 	text-align: center;
 }
 
@@ -33,3 +38,5 @@ h1,h2 {
 .blue {
 	background-color: blue;
 }
+
+
