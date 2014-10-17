@@ -3,22 +3,25 @@ body {
 	text-align: center;
 	font-family: helvetica;
 	font-weight: 300;
+	margin: 0px;
 }
 
 .container {
-	width: 500px;
-	height: 500px;
+	width: 524px;
+	height: 550px;
 	margin: auto;
 }
 
 .cells {
 	width:160.5px;
 	height: 160.5px;
+	border-radius: 3%;
 	border: 2px solid white;
 	display: inline-block;
 	float: left;
 	color: black;
 	background-color: lightgrey;
+	margin: 5px
 	
 }
 
@@ -26,17 +29,42 @@ body {
 h1,h2 {
 	color: white;
 	font-weight: lighter;
-	font-size: 48px;
+	font-size: 68px;
 	text-align: center;
+	margin-top: 60px;
+	margin-bottom: 20px;
+	background-color: grey;
+	padding: 20px
+
 }
 
 
 .red {
 	background-color: red;
+	opacity: 50%
 }
 
 .blue {
 	background-color: blue;
+}
+
+.button {
+	display: inline-table;
+	width: 120px;
+	height: 50px;
+	text-align: center;
+	margin: auto;
+	border-style: none;
+	background-color: red;
+	color: white;
+	font-size: 14px
+}
+
+.clickdiv {
+	width:130px;
+	height: 50px;
+	margin: auto;
+	padding: 20px
 }
 
 

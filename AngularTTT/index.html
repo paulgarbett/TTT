@@ -20,13 +20,14 @@
 	<h1>Tic Tac Toe</h1>
 	<div class="container" >
 		<p>Move Counter: {{gameContainer.moveCount}}</p>
-		<div ng-repeat="c in gameContainer.cellListArray" >
+		<div ng-repeat="c in gameContainer.cellListArray">
 			<div class="cells" ng-class="{red:c.move=='X', blue:c.move=='O'}" ng-click ="playerPicks(c)">
 			Cell Contents: {{c.move}}
 			</div>
 
 		</div>
 	</div>
-	<button ng-click="test()">Reset Game</button>
+	<div class="clickdiv"><button class="button" ng-click="test()">Reset Game</button>
+	</div>
 </body>
 </html>
