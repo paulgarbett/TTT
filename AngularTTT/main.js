@@ -49,25 +49,26 @@ $scope.remoteGameContainer =
 		if (($scope.gameContainer.moveCount % 2) == 1) {
 			thisCell.move = "X" ;
 			$scope.playerMovesX.push(thisCell.indice);
+	       $scope.winningFunction($scope.playerMovesX);
 		}
 		else {
 			thisCell.move = "O";	
 			$scope.playerMovesO.push(thisCell.indice);
+	       $scope.winningFunction($scope.playerMovesO);
 		}
 		console.log("Cells is now: " + thisCell.move) ;
 		console.log($scope.playerMovesX);
-       $scope.winningFunction();
-     
+    };
 
 
-
-
+    // possible winning combos
 	$scope.winningFunction = function(moves) {
+		console.log(moves);
     var winningArrays = [
       [0, 1, 2],
       [3, 4, 5],
       [6, 7, 8],
-      [0, 5, 6],
+      [0, 3, 6],
       [1, 4, 7],
       [2, 5, 8],
       [0, 4, 8],
@@ -94,31 +95,12 @@ $scope.remoteGameContainer =
           $scope.callWinner2();
         }
       }
-    }
+      else {
+      	if($scope.gameContainer.moveCount == 9)
+      		alert("you're all tied up");
+      }
   };  //end of winningFunction for loop
 
-
-
-	// $scope.winningFunciton = funciton(moves) {
-	// 	var winningArrays = [
-	// 		[ 1, 2, 3 ],
-	// 		[ 4, 5, 6 ],
-	// 		[ 7, 8, 9 ],
-	// 		[ 1, 4, 7 ],
-	// 		[ 2, 5, 8 ],
-	// 		[ 3, 6, 9 ],
-	// 		[ 1, 5, 9 ],
-	// 		[ 3, 5, 7 ]
-	// 		]; //end of possible winning combinations
-
-
-
-
-
-	// }; // end of wining function
-
-
-	
 
 
  	//test button
@@ -127,13 +109,13 @@ $scope.remoteGameContainer =
 		console.log('This is working.');
 	};
 
-
-
-
-
-
 }
-
+	$scope.callWinner1 = function(){
+		alert("That's right ...... X WINS !!!! (choke on that)");
+	};
+	$scope.callWinner2 = function(){
+		alert("That's right ...... O WINS !!!! (choke on that)");
+	};
 });
 
 
